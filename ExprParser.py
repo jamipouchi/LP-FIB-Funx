@@ -24,45 +24,45 @@ def serializedATN():
         buf.write("\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\5\fz\n\f\3")
         buf.write("\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f\3\f")
         buf.write("\3\f\3\f\3\f\3\f\7\f\u008e\n\f\f\f\16\f\u0091\13\f\3\f")
-        buf.write("\2\4\6\26\r\2\4\6\b\n\f\16\20\22\24\26\2\5\3\2\t\13\3")
-        buf.write("\2\f\r\3\2\30\31\2\u009f\2\33\3\2\2\2\4!\3\2\2\2\6\62")
-        buf.write("\3\2\2\2\bB\3\2\2\2\nN\3\2\2\2\fX\3\2\2\2\16Z\3\2\2\2")
-        buf.write("\20h\3\2\2\2\22k\3\2\2\2\24o\3\2\2\2\26y\3\2\2\2\30\32")
-        buf.write("\5\4\3\2\31\30\3\2\2\2\32\35\3\2\2\2\33\31\3\2\2\2\33")
-        buf.write("\34\3\2\2\2\34\37\3\2\2\2\35\33\3\2\2\2\36 \5\6\4\2\37")
-        buf.write("\36\3\2\2\2\37 \3\2\2\2 \3\3\2\2\2!%\7\32\2\2\"$\7\31")
-        buf.write("\2\2#\"\3\2\2\2$\'\3\2\2\2%#\3\2\2\2%&\3\2\2\2&(\3\2\2")
-        buf.write("\2\'%\3\2\2\2()\5\b\5\2)\5\3\2\2\2*+\b\4\1\2+,\7\3\2\2")
-        buf.write(",-\5\6\4\2-.\7\4\2\2.\63\3\2\2\2/\63\5\n\6\2\60\63\7\30")
-        buf.write("\2\2\61\63\7\31\2\2\62*\3\2\2\2\62/\3\2\2\2\62\60\3\2")
-        buf.write("\2\2\62\61\3\2\2\2\63?\3\2\2\2\64\65\f\t\2\2\65\66\7\b")
-        buf.write("\2\2\66>\5\6\4\n\678\f\b\2\289\t\2\2\29>\5\6\4\t:;\f\7")
-        buf.write("\2\2;<\t\3\2\2<>\5\6\4\b=\64\3\2\2\2=\67\3\2\2\2=:\3\2")
-        buf.write("\2\2>A\3\2\2\2?=\3\2\2\2?@\3\2\2\2@\7\3\2\2\2A?\3\2\2")
-        buf.write("\2BF\7\5\2\2CE\5\f\7\2DC\3\2\2\2EH\3\2\2\2FD\3\2\2\2F")
-        buf.write("G\3\2\2\2GJ\3\2\2\2HF\3\2\2\2IK\5\6\4\2JI\3\2\2\2JK\3")
-        buf.write("\2\2\2KL\3\2\2\2LM\7\6\2\2M\t\3\2\2\2NR\7\32\2\2OQ\t\4")
-        buf.write("\2\2PO\3\2\2\2QT\3\2\2\2RP\3\2\2\2RS\3\2\2\2S\13\3\2\2")
-        buf.write("\2TR\3\2\2\2UY\5\16\b\2VY\5\20\t\2WY\5\22\n\2XU\3\2\2")
-        buf.write("\2XV\3\2\2\2XW\3\2\2\2Y\r\3\2\2\2Z[\7\17\2\2[a\5\24\13")
-        buf.write("\2\\]\7\20\2\2]^\7\17\2\2^`\5\24\13\2_\\\3\2\2\2`c\3\2")
-        buf.write("\2\2a_\3\2\2\2ab\3\2\2\2bf\3\2\2\2ca\3\2\2\2de\7\20\2")
-        buf.write("\2eg\5\b\5\2fd\3\2\2\2fg\3\2\2\2g\17\3\2\2\2hi\7\21\2")
-        buf.write("\2ij\5\24\13\2j\21\3\2\2\2kl\7\31\2\2lm\7\16\2\2mn\5\6")
-        buf.write("\4\2n\23\3\2\2\2op\5\26\f\2pq\5\b\5\2q\25\3\2\2\2rs\b")
-        buf.write("\f\1\2st\7\3\2\2tu\5\26\f\2uv\7\4\2\2vz\3\2\2\2wz\7\30")
-        buf.write("\2\2xz\7\31\2\2yr\3\2\2\2yw\3\2\2\2yx\3\2\2\2z\u008f\3")
-        buf.write("\2\2\2{|\f\13\2\2|}\7\22\2\2}\u008e\5\26\f\f~\177\f\n")
-        buf.write("\2\2\177\u0080\7\23\2\2\u0080\u008e\5\26\f\13\u0081\u0082")
-        buf.write("\f\t\2\2\u0082\u0083\7\24\2\2\u0083\u008e\5\26\f\n\u0084")
-        buf.write("\u0085\f\b\2\2\u0085\u0086\7\25\2\2\u0086\u008e\5\26\f")
-        buf.write("\t\u0087\u0088\f\7\2\2\u0088\u0089\7\26\2\2\u0089\u008e")
-        buf.write("\5\26\f\b\u008a\u008b\f\6\2\2\u008b\u008c\7\27\2\2\u008c")
-        buf.write("\u008e\5\26\f\7\u008d{\3\2\2\2\u008d~\3\2\2\2\u008d\u0081")
-        buf.write("\3\2\2\2\u008d\u0084\3\2\2\2\u008d\u0087\3\2\2\2\u008d")
-        buf.write("\u008a\3\2\2\2\u008e\u0091\3\2\2\2\u008f\u008d\3\2\2\2")
-        buf.write("\u008f\u0090\3\2\2\2\u0090\27\3\2\2\2\u0091\u008f\3\2")
-        buf.write("\2\2\21\33\37%\62=?FJRXafy\u008d\u008f")
+        buf.write("\2\4\6\26\r\2\4\6\b\n\f\16\20\22\24\26\2\4\3\2\t\13\3")
+        buf.write("\2\f\r\2\u009f\2\33\3\2\2\2\4!\3\2\2\2\6\62\3\2\2\2\b")
+        buf.write("B\3\2\2\2\nN\3\2\2\2\fX\3\2\2\2\16Z\3\2\2\2\20h\3\2\2")
+        buf.write("\2\22k\3\2\2\2\24o\3\2\2\2\26y\3\2\2\2\30\32\5\4\3\2\31")
+        buf.write("\30\3\2\2\2\32\35\3\2\2\2\33\31\3\2\2\2\33\34\3\2\2\2")
+        buf.write("\34\37\3\2\2\2\35\33\3\2\2\2\36 \5\6\4\2\37\36\3\2\2\2")
+        buf.write("\37 \3\2\2\2 \3\3\2\2\2!%\7\32\2\2\"$\7\31\2\2#\"\3\2")
+        buf.write("\2\2$\'\3\2\2\2%#\3\2\2\2%&\3\2\2\2&(\3\2\2\2\'%\3\2\2")
+        buf.write("\2()\5\b\5\2)\5\3\2\2\2*+\b\4\1\2+,\7\3\2\2,-\5\6\4\2")
+        buf.write("-.\7\4\2\2.\63\3\2\2\2/\63\5\n\6\2\60\63\7\30\2\2\61\63")
+        buf.write("\7\31\2\2\62*\3\2\2\2\62/\3\2\2\2\62\60\3\2\2\2\62\61")
+        buf.write("\3\2\2\2\63?\3\2\2\2\64\65\f\t\2\2\65\66\7\b\2\2\66>\5")
+        buf.write("\6\4\n\678\f\b\2\289\t\2\2\29>\5\6\4\t:;\f\7\2\2;<\t\3")
+        buf.write("\2\2<>\5\6\4\b=\64\3\2\2\2=\67\3\2\2\2=:\3\2\2\2>A\3\2")
+        buf.write("\2\2?=\3\2\2\2?@\3\2\2\2@\7\3\2\2\2A?\3\2\2\2BF\7\5\2")
+        buf.write("\2CE\5\f\7\2DC\3\2\2\2EH\3\2\2\2FD\3\2\2\2FG\3\2\2\2G")
+        buf.write("J\3\2\2\2HF\3\2\2\2IK\5\6\4\2JI\3\2\2\2JK\3\2\2\2KL\3")
+        buf.write("\2\2\2LM\7\6\2\2M\t\3\2\2\2NR\7\32\2\2OQ\5\6\4\2PO\3\2")
+        buf.write("\2\2QT\3\2\2\2RP\3\2\2\2RS\3\2\2\2S\13\3\2\2\2TR\3\2\2")
+        buf.write("\2UY\5\16\b\2VY\5\20\t\2WY\5\22\n\2XU\3\2\2\2XV\3\2\2")
+        buf.write("\2XW\3\2\2\2Y\r\3\2\2\2Z[\7\17\2\2[a\5\24\13\2\\]\7\20")
+        buf.write("\2\2]^\7\17\2\2^`\5\24\13\2_\\\3\2\2\2`c\3\2\2\2a_\3\2")
+        buf.write("\2\2ab\3\2\2\2bf\3\2\2\2ca\3\2\2\2de\7\20\2\2eg\5\b\5")
+        buf.write("\2fd\3\2\2\2fg\3\2\2\2g\17\3\2\2\2hi\7\21\2\2ij\5\24\13")
+        buf.write("\2j\21\3\2\2\2kl\7\31\2\2lm\7\16\2\2mn\5\6\4\2n\23\3\2")
+        buf.write("\2\2op\5\26\f\2pq\5\b\5\2q\25\3\2\2\2rs\b\f\1\2st\7\3")
+        buf.write("\2\2tu\5\26\f\2uv\7\4\2\2vz\3\2\2\2wz\7\30\2\2xz\7\31")
+        buf.write("\2\2yr\3\2\2\2yw\3\2\2\2yx\3\2\2\2z\u008f\3\2\2\2{|\f")
+        buf.write("\13\2\2|}\7\22\2\2}\u008e\5\26\f\f~\177\f\n\2\2\177\u0080")
+        buf.write("\7\23\2\2\u0080\u008e\5\26\f\13\u0081\u0082\f\t\2\2\u0082")
+        buf.write("\u0083\7\24\2\2\u0083\u008e\5\26\f\n\u0084\u0085\f\b\2")
+        buf.write("\2\u0085\u0086\7\25\2\2\u0086\u008e\5\26\f\t\u0087\u0088")
+        buf.write("\f\7\2\2\u0088\u0089\7\26\2\2\u0089\u008e\5\26\f\b\u008a")
+        buf.write("\u008b\f\6\2\2\u008b\u008c\7\27\2\2\u008c\u008e\5\26\f")
+        buf.write("\7\u008d{\3\2\2\2\u008d~\3\2\2\2\u008d\u0081\3\2\2\2\u008d")
+        buf.write("\u0084\3\2\2\2\u008d\u0087\3\2\2\2\u008d\u008a\3\2\2\2")
+        buf.write("\u008e\u0091\3\2\2\2\u008f\u008d\3\2\2\2\u008f\u0090\3")
+        buf.write("\2\2\2\u0090\27\3\2\2\2\u0091\u008f\3\2\2\2\21\33\37%")
+        buf.write("\62=?FJRXafy\u008d\u008f")
         return buf.getvalue()
 
 
@@ -518,17 +518,12 @@ class ExprParser ( Parser ):
         def FUN_IDENT(self):
             return self.getToken(ExprParser.FUN_IDENT, 0)
 
-        def NUMBER(self, i:int=None):
+        def expr(self, i:int=None):
             if i is None:
-                return self.getTokens(ExprParser.NUMBER)
+                return self.getTypedRuleContexts(ExprParser.ExprContext)
             else:
-                return self.getToken(ExprParser.NUMBER, i)
+                return self.getTypedRuleContext(ExprParser.ExprContext,i)
 
-        def IDENT(self, i:int=None):
-            if i is None:
-                return self.getTokens(ExprParser.IDENT)
-            else:
-                return self.getToken(ExprParser.IDENT, i)
 
         def getRuleIndex(self):
             return ExprParser.RULE_fun_call
@@ -546,7 +541,6 @@ class ExprParser ( Parser ):
 
         localctx = ExprParser.Fun_callContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_fun_call)
-        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 76
@@ -557,12 +551,7 @@ class ExprParser ( Parser ):
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     self.state = 77
-                    _la = self._input.LA(1)
-                    if not(_la==ExprParser.NUMBER or _la==ExprParser.IDENT):
-                        self._errHandler.recoverInline(self)
-                    else:
-                        self._errHandler.reportMatch(self)
-                        self.consume() 
+                    self.expr(0) 
                 self.state = 82
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,8,self._ctx)

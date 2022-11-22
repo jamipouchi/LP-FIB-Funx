@@ -15,7 +15,7 @@ expr:
 
 block: '{' (logical_expr)* expr? '}';
 
-fun_call: FUN_IDENT (NUMBER | IDENT)*;
+fun_call: FUN_IDENT (expr)*;
 
 logical_expr: if_expr | while_expr | assignment;
 
