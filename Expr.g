@@ -2,7 +2,7 @@ grammar Expr;
 
 root: (fun_declaration)* expr?;
 
-fun_declaration: FUN_IDENT (IDENT)* block;
+fun_declaration: FUN_IDENT declare_params block;
 
 expr:
 	expr A_LA expr
@@ -13,11 +13,15 @@ expr:
 	| NUMBER
 	| IDENT;
 
+declare_params: (IDENT)*;
+
 block: '{' (logical_expr)* expr? '}';
 
-fun_call: FUN_IDENT (expr)*;
+fun_call: FUN_IDENT call_params;
 
 logical_expr: if_expr | while_expr | assignment;
+
+call_params: (expr)*;
 
 if_expr:
 	IF condition_block (ELSE IF condition_block)* (ELSE block)?;
