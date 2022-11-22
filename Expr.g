@@ -13,11 +13,11 @@ expr:
 	| NUMBER
 	| IDENT;
 
-block: '{' (logical_expr | assignment)* expr? '}';
+block: '{' (logical_expr)* expr? '}';
 
 fun_call: FUN_IDENT (NUMBER | IDENT)*;
 
-logical_expr: if_expr | while_expr;
+logical_expr: if_expr | while_expr | assignment;
 
 if_expr:
 	IF condition_block (ELSE IF condition_block)* (ELSE block)?;

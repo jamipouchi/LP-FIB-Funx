@@ -17,8 +17,8 @@ def serializedATN():
         buf.write("\n\2\f\2\16\2\35\13\2\3\2\5\2 \n\2\3\3\3\3\7\3$\n\3\f")
         buf.write("\3\16\3\'\13\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4")
         buf.write("\5\4\63\n\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\7\4>\n")
-        buf.write("\4\f\4\16\4A\13\4\3\5\3\5\3\5\7\5F\n\5\f\5\16\5I\13\5")
-        buf.write("\3\5\5\5L\n\5\3\5\3\5\3\6\3\6\7\6R\n\6\f\6\16\6U\13\6")
+        buf.write("\4\f\4\16\4A\13\4\3\5\3\5\7\5E\n\5\f\5\16\5H\13\5\3\5")
+        buf.write("\5\5K\n\5\3\5\3\5\3\6\3\6\7\6Q\n\6\f\6\16\6T\13\6\3\7")
         buf.write("\3\7\3\7\5\7Y\n\7\3\b\3\b\3\b\3\b\3\b\7\b`\n\b\f\b\16")
         buf.write("\bc\13\b\3\b\3\b\5\bg\n\b\3\t\3\t\3\t\3\n\3\n\3\n\3\n")
         buf.write("\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\3\f\3\f\5\fz\n\f\3")
@@ -26,7 +26,7 @@ def serializedATN():
         buf.write("\3\f\3\f\3\f\3\f\7\f\u008e\n\f\f\f\16\f\u0091\13\f\3\f")
         buf.write("\2\4\6\26\r\2\4\6\b\n\f\16\20\22\24\26\2\5\3\2\t\13\3")
         buf.write("\2\f\r\3\2\30\31\2\u009f\2\33\3\2\2\2\4!\3\2\2\2\6\62")
-        buf.write("\3\2\2\2\bB\3\2\2\2\nO\3\2\2\2\fX\3\2\2\2\16Z\3\2\2\2")
+        buf.write("\3\2\2\2\bB\3\2\2\2\nN\3\2\2\2\fX\3\2\2\2\16Z\3\2\2\2")
         buf.write("\20h\3\2\2\2\22k\3\2\2\2\24o\3\2\2\2\26y\3\2\2\2\30\32")
         buf.write("\5\4\3\2\31\30\3\2\2\2\32\35\3\2\2\2\33\31\3\2\2\2\33")
         buf.write("\34\3\2\2\2\34\37\3\2\2\2\35\33\3\2\2\2\36 \5\6\4\2\37")
@@ -39,11 +39,11 @@ def serializedATN():
         buf.write("\2\2\66>\5\6\4\n\678\f\b\2\289\t\2\2\29>\5\6\4\t:;\f\7")
         buf.write("\2\2;<\t\3\2\2<>\5\6\4\b=\64\3\2\2\2=\67\3\2\2\2=:\3\2")
         buf.write("\2\2>A\3\2\2\2?=\3\2\2\2?@\3\2\2\2@\7\3\2\2\2A?\3\2\2")
-        buf.write("\2BG\7\5\2\2CF\5\f\7\2DF\5\22\n\2EC\3\2\2\2ED\3\2\2\2")
-        buf.write("FI\3\2\2\2GE\3\2\2\2GH\3\2\2\2HK\3\2\2\2IG\3\2\2\2JL\5")
-        buf.write("\6\4\2KJ\3\2\2\2KL\3\2\2\2LM\3\2\2\2MN\7\6\2\2N\t\3\2")
-        buf.write("\2\2OS\7\32\2\2PR\t\4\2\2QP\3\2\2\2RU\3\2\2\2SQ\3\2\2")
-        buf.write("\2ST\3\2\2\2T\13\3\2\2\2US\3\2\2\2VY\5\16\b\2WY\5\20\t")
+        buf.write("\2BF\7\5\2\2CE\5\f\7\2DC\3\2\2\2EH\3\2\2\2FD\3\2\2\2F")
+        buf.write("G\3\2\2\2GJ\3\2\2\2HF\3\2\2\2IK\5\6\4\2JI\3\2\2\2JK\3")
+        buf.write("\2\2\2KL\3\2\2\2LM\7\6\2\2M\t\3\2\2\2NR\7\32\2\2OQ\t\4")
+        buf.write("\2\2PO\3\2\2\2QT\3\2\2\2RP\3\2\2\2RS\3\2\2\2S\13\3\2\2")
+        buf.write("\2TR\3\2\2\2UY\5\16\b\2VY\5\20\t\2WY\5\22\n\2XU\3\2\2")
         buf.write("\2XV\3\2\2\2XW\3\2\2\2Y\r\3\2\2\2Z[\7\17\2\2[a\5\24\13")
         buf.write("\2\\]\7\20\2\2]^\7\17\2\2^`\5\24\13\2_\\\3\2\2\2`c\3\2")
         buf.write("\2\2a_\3\2\2\2ab\3\2\2\2bf\3\2\2\2ca\3\2\2\2de\7\20\2")
@@ -62,7 +62,7 @@ def serializedATN():
         buf.write("\3\2\2\2\u008d\u0084\3\2\2\2\u008d\u0087\3\2\2\2\u008d")
         buf.write("\u008a\3\2\2\2\u008e\u0091\3\2\2\2\u008f\u008d\3\2\2\2")
         buf.write("\u008f\u0090\3\2\2\2\u0090\27\3\2\2\2\u0091\u008f\3\2")
-        buf.write("\2\2\22\33\37%\62=?EGKSXafy\u008d\u008f")
+        buf.write("\2\2\21\33\37%\62=?FJRXafy\u008d\u008f")
         return buf.getvalue()
 
 
@@ -453,13 +453,6 @@ class ExprParser ( Parser ):
                 return self.getTypedRuleContext(ExprParser.Logical_exprContext,i)
 
 
-        def assignment(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(ExprParser.AssignmentContext)
-            else:
-                return self.getTypedRuleContext(ExprParser.AssignmentContext,i)
-
-
         def expr(self):
             return self.getTypedRuleContext(ExprParser.ExprContext,0)
 
@@ -485,38 +478,26 @@ class ExprParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 64
             self.match(ExprParser.T__2)
-            self.state = 69
+            self.state = 68
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 67
-                    self._errHandler.sync(self)
-                    token = self._input.LA(1)
-                    if token in [ExprParser.IF, ExprParser.WHILE]:
-                        self.state = 65
-                        self.logical_expr()
-                        pass
-                    elif token in [ExprParser.IDENT]:
-                        self.state = 66
-                        self.assignment()
-                        pass
-                    else:
-                        raise NoViableAltException(self)
-             
-                self.state = 71
+                    self.state = 65
+                    self.logical_expr() 
+                self.state = 70
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
 
-            self.state = 73
+            self.state = 72
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ExprParser.T__0) | (1 << ExprParser.NUMBER) | (1 << ExprParser.IDENT) | (1 << ExprParser.FUN_IDENT))) != 0):
-                self.state = 72
+                self.state = 71
                 self.expr(0)
 
 
-            self.state = 75
+            self.state = 74
             self.match(ExprParser.T__3)
         except RecognitionException as re:
             localctx.exception = re
@@ -568,23 +549,23 @@ class ExprParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 77
+            self.state = 76
             self.match(ExprParser.FUN_IDENT)
-            self.state = 81
+            self.state = 80
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,9,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,8,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 78
+                    self.state = 77
                     _la = self._input.LA(1)
                     if not(_la==ExprParser.NUMBER or _la==ExprParser.IDENT):
                         self._errHandler.recoverInline(self)
                     else:
                         self._errHandler.reportMatch(self)
                         self.consume() 
-                self.state = 83
+                self.state = 82
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,9,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,8,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -610,6 +591,10 @@ class ExprParser ( Parser ):
             return self.getTypedRuleContext(ExprParser.While_exprContext,0)
 
 
+        def assignment(self):
+            return self.getTypedRuleContext(ExprParser.AssignmentContext,0)
+
+
         def getRuleIndex(self):
             return ExprParser.RULE_logical_expr
 
@@ -632,13 +617,18 @@ class ExprParser ( Parser ):
             token = self._input.LA(1)
             if token in [ExprParser.IF]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 84
+                self.state = 83
                 self.if_expr()
                 pass
             elif token in [ExprParser.WHILE]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 85
+                self.state = 84
                 self.while_expr()
+                pass
+            elif token in [ExprParser.IDENT]:
+                self.enterOuterAlt(localctx, 3)
+                self.state = 85
+                self.assignment()
                 pass
             else:
                 raise NoViableAltException(self)
@@ -707,7 +697,7 @@ class ExprParser ( Parser ):
             self.condition_block()
             self.state = 95
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     self.state = 90
@@ -718,7 +708,7 @@ class ExprParser ( Parser ):
                     self.condition_block() 
                 self.state = 97
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,11,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
 
             self.state = 100
             self._errHandler.sync(self)
@@ -963,7 +953,7 @@ class ExprParser ( Parser ):
             self._ctx.stop = self._input.LT(-1)
             self.state = 141
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,15,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
@@ -971,7 +961,7 @@ class ExprParser ( Parser ):
                     _prevctx = localctx
                     self.state = 139
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
                     if la_ == 1:
                         localctx = ExprParser.ConditionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_condition)
@@ -1053,7 +1043,7 @@ class ExprParser ( Parser ):
              
                 self.state = 143
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,15,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
