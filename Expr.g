@@ -33,7 +33,10 @@ assignment: IDENT ASSIGN expr;
 condition_block: condition block;
 
 condition:
-	condition GT condition
+	condition AND condition
+	| condition OR condition
+	| condition XOR condition
+	| condition GT condition
 	| condition GE condition
 	| condition LT condition
 	| condition LE condition
@@ -63,6 +66,9 @@ ELSE: 'else';
 WHILE: 'while';
 
 // logical_operators
+AND: 'and';
+OR: 'or';
+XOR: 'xor';
 GT: '>';
 GE: '>=';
 LT: '<';
