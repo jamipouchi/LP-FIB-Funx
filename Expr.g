@@ -1,6 +1,6 @@
 grammar Expr;
 
-root: (fun_declaration)* expr?;
+root: (fun_declaration)* (expr)?;
 
 fun_declaration: FUN_IDENT declare_params block;
 
@@ -13,11 +13,11 @@ expr:
 	| NUMBER
 	| IDENT;
 
+fun_call: FUN_IDENT call_params;
+
 declare_params: (IDENT)*;
 
 block: '{' (logical_expr)* expr? '}';
-
-fun_call: FUN_IDENT call_params;
 
 logical_expr: if_expr | while_expr | assignment;
 

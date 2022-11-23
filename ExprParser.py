@@ -17,8 +17,8 @@ def serializedATN():
         buf.write("\t\16\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\2\5\2$\n\2\3\3\3")
         buf.write("\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4\62\n\4")
         buf.write("\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\7\4=\n\4\f\4\16\4")
-        buf.write("@\13\4\3\5\7\5C\n\5\f\5\16\5F\13\5\3\6\3\6\7\6J\n\6\f")
-        buf.write("\6\16\6M\13\6\3\6\5\6P\n\6\3\6\3\6\3\7\3\7\3\7\3\b\3\b")
+        buf.write("@\13\4\3\5\3\5\3\5\3\6\7\6F\n\6\f\6\16\6I\13\6\3\7\3\7")
+        buf.write("\7\7M\n\7\f\7\16\7P\13\7\3\7\5\7S\n\7\3\7\3\7\3\b\3\b")
         buf.write("\3\b\5\bZ\n\b\3\t\7\t]\n\t\f\t\16\t`\13\t\3\n\3\n\3\n")
         buf.write("\3\n\3\n\7\ng\n\n\f\n\16\nj\13\n\3\n\3\n\5\nn\n\n\3\13")
         buf.write("\3\13\3\13\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\16\3\16\3\16")
@@ -28,31 +28,31 @@ def serializedATN():
         buf.write("\3\16\3\16\7\16\u009e\n\16\f\16\16\16\u00a1\13\16\3\16")
         buf.write("\2\4\6\32\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2\4\3\2")
         buf.write("\t\13\3\2\f\r\2\u00b0\2\37\3\2\2\2\4%\3\2\2\2\6\61\3\2")
-        buf.write("\2\2\bD\3\2\2\2\nG\3\2\2\2\fS\3\2\2\2\16Y\3\2\2\2\20^")
+        buf.write("\2\2\bA\3\2\2\2\nG\3\2\2\2\fJ\3\2\2\2\16Y\3\2\2\2\20^")
         buf.write("\3\2\2\2\22a\3\2\2\2\24o\3\2\2\2\26r\3\2\2\2\30v\3\2\2")
         buf.write("\2\32\u0080\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2\2\36!\3")
         buf.write("\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 #\3\2\2\2!\37\3\2\2\2")
         buf.write("\"$\5\6\4\2#\"\3\2\2\2#$\3\2\2\2$\3\3\2\2\2%&\7\35\2\2")
-        buf.write("&\'\5\b\5\2\'(\5\n\6\2(\5\3\2\2\2)*\b\4\1\2*+\7\3\2\2")
-        buf.write("+,\5\6\4\2,-\7\4\2\2-\62\3\2\2\2.\62\5\f\7\2/\62\7\33")
+        buf.write("&\'\5\n\6\2\'(\5\f\7\2(\5\3\2\2\2)*\b\4\1\2*+\7\3\2\2")
+        buf.write("+,\5\6\4\2,-\7\4\2\2-\62\3\2\2\2.\62\5\b\5\2/\62\7\33")
         buf.write("\2\2\60\62\7\34\2\2\61)\3\2\2\2\61.\3\2\2\2\61/\3\2\2")
         buf.write("\2\61\60\3\2\2\2\62>\3\2\2\2\63\64\f\t\2\2\64\65\7\b\2")
         buf.write("\2\65=\5\6\4\n\66\67\f\b\2\2\678\t\2\2\28=\5\6\4\t9:\f")
         buf.write("\7\2\2:;\t\3\2\2;=\5\6\4\b<\63\3\2\2\2<\66\3\2\2\2<9\3")
         buf.write("\2\2\2=@\3\2\2\2><\3\2\2\2>?\3\2\2\2?\7\3\2\2\2@>\3\2")
-        buf.write("\2\2AC\7\34\2\2BA\3\2\2\2CF\3\2\2\2DB\3\2\2\2DE\3\2\2")
-        buf.write("\2E\t\3\2\2\2FD\3\2\2\2GK\7\5\2\2HJ\5\16\b\2IH\3\2\2\2")
-        buf.write("JM\3\2\2\2KI\3\2\2\2KL\3\2\2\2LO\3\2\2\2MK\3\2\2\2NP\5")
-        buf.write("\6\4\2ON\3\2\2\2OP\3\2\2\2PQ\3\2\2\2QR\7\6\2\2R\13\3\2")
-        buf.write("\2\2ST\7\35\2\2TU\5\20\t\2U\r\3\2\2\2VZ\5\22\n\2WZ\5\24")
+        buf.write("\2\2AB\7\35\2\2BC\5\20\t\2C\t\3\2\2\2DF\7\34\2\2ED\3\2")
+        buf.write("\2\2FI\3\2\2\2GE\3\2\2\2GH\3\2\2\2H\13\3\2\2\2IG\3\2\2")
+        buf.write("\2JN\7\5\2\2KM\5\16\b\2LK\3\2\2\2MP\3\2\2\2NL\3\2\2\2")
+        buf.write("NO\3\2\2\2OR\3\2\2\2PN\3\2\2\2QS\5\6\4\2RQ\3\2\2\2RS\3")
+        buf.write("\2\2\2ST\3\2\2\2TU\7\6\2\2U\r\3\2\2\2VZ\5\22\n\2WZ\5\24")
         buf.write("\13\2XZ\5\26\f\2YV\3\2\2\2YW\3\2\2\2YX\3\2\2\2Z\17\3\2")
         buf.write("\2\2[]\5\6\4\2\\[\3\2\2\2]`\3\2\2\2^\\\3\2\2\2^_\3\2\2")
         buf.write("\2_\21\3\2\2\2`^\3\2\2\2ab\7\17\2\2bh\5\30\r\2cd\7\20")
         buf.write("\2\2de\7\17\2\2eg\5\30\r\2fc\3\2\2\2gj\3\2\2\2hf\3\2\2")
-        buf.write("\2hi\3\2\2\2im\3\2\2\2jh\3\2\2\2kl\7\20\2\2ln\5\n\6\2")
+        buf.write("\2hi\3\2\2\2im\3\2\2\2jh\3\2\2\2kl\7\20\2\2ln\5\f\7\2")
         buf.write("mk\3\2\2\2mn\3\2\2\2n\23\3\2\2\2op\7\21\2\2pq\5\30\r\2")
         buf.write("q\25\3\2\2\2rs\7\34\2\2st\7\16\2\2tu\5\6\4\2u\27\3\2\2")
-        buf.write("\2vw\5\32\16\2wx\5\n\6\2x\31\3\2\2\2yz\b\16\1\2z{\7\3")
+        buf.write("\2vw\5\32\16\2wx\5\f\7\2x\31\3\2\2\2yz\b\16\1\2z{\7\3")
         buf.write("\2\2{|\5\32\16\2|}\7\4\2\2}\u0081\3\2\2\2~\u0081\7\33")
         buf.write("\2\2\177\u0081\7\34\2\2\u0080y\3\2\2\2\u0080~\3\2\2\2")
         buf.write("\u0080\177\3\2\2\2\u0081\u009f\3\2\2\2\u0082\u0083\f\16")
@@ -71,7 +71,7 @@ def serializedATN():
         buf.write("\u009d\u0091\3\2\2\2\u009d\u0094\3\2\2\2\u009d\u0097\3")
         buf.write("\2\2\2\u009d\u009a\3\2\2\2\u009e\u00a1\3\2\2\2\u009f\u009d")
         buf.write("\3\2\2\2\u009f\u00a0\3\2\2\2\u00a0\33\3\2\2\2\u00a1\u009f")
-        buf.write("\3\2\2\2\21\37#\61<>DKOY^hm\u0080\u009d\u009f")
+        buf.write("\3\2\2\2\21\37#\61<>GNRY^hm\u0080\u009d\u009f")
         return buf.getvalue()
 
 
@@ -102,9 +102,9 @@ class ExprParser ( Parser ):
     RULE_root = 0
     RULE_fun_declaration = 1
     RULE_expr = 2
-    RULE_declare_params = 3
-    RULE_block = 4
-    RULE_fun_call = 5
+    RULE_fun_call = 3
+    RULE_declare_params = 4
+    RULE_block = 5
     RULE_logical_expr = 6
     RULE_call_params = 7
     RULE_if_expr = 8
@@ -113,9 +113,9 @@ class ExprParser ( Parser ):
     RULE_condition_block = 11
     RULE_condition = 12
 
-    ruleNames =  [ "root", "fun_declaration", "expr", "declare_params", 
-                   "block", "fun_call", "logical_expr", "call_params", "if_expr", 
-                   "while_expr", "assignment", "condition_block", "condition" ]
+    ruleNames =  [ "root", "fun_declaration", "expr", "fun_call", "declare_params", 
+                   "block", "logical_expr", "call_params", "if_expr", "while_expr", 
+                   "assignment", "condition_block", "condition" ]
 
     EOF = Token.EOF
     T__0=1
@@ -442,6 +442,51 @@ class ExprParser ( Parser ):
         return localctx
 
 
+    class Fun_callContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def FUN_IDENT(self):
+            return self.getToken(ExprParser.FUN_IDENT, 0)
+
+        def call_params(self):
+            return self.getTypedRuleContext(ExprParser.Call_paramsContext,0)
+
+
+        def getRuleIndex(self):
+            return ExprParser.RULE_fun_call
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFun_call" ):
+                return visitor.visitFun_call(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def fun_call(self):
+
+        localctx = ExprParser.Fun_callContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 6, self.RULE_fun_call)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 63
+            self.match(ExprParser.FUN_IDENT)
+            self.state = 64
+            self.call_params()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
     class Declare_paramsContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -470,17 +515,17 @@ class ExprParser ( Parser ):
     def declare_params(self):
 
         localctx = ExprParser.Declare_paramsContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 6, self.RULE_declare_params)
+        self.enterRule(localctx, 8, self.RULE_declare_params)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 66
+            self.state = 69
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==ExprParser.IDENT:
-                self.state = 63
+                self.state = 66
                 self.match(ExprParser.IDENT)
-                self.state = 68
+                self.state = 71
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -526,78 +571,33 @@ class ExprParser ( Parser ):
     def block(self):
 
         localctx = ExprParser.BlockContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 8, self.RULE_block)
+        self.enterRule(localctx, 10, self.RULE_block)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 69
+            self.state = 72
             self.match(ExprParser.T__2)
-            self.state = 73
+            self.state = 76
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
-                    self.state = 70
+                    self.state = 73
                     self.logical_expr() 
-                self.state = 75
+                self.state = 78
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
 
-            self.state = 77
+            self.state = 80
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << ExprParser.T__0) | (1 << ExprParser.NUMBER) | (1 << ExprParser.IDENT) | (1 << ExprParser.FUN_IDENT))) != 0):
-                self.state = 76
+                self.state = 79
                 self.expr(0)
 
 
-            self.state = 79
-            self.match(ExprParser.T__3)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class Fun_callContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def FUN_IDENT(self):
-            return self.getToken(ExprParser.FUN_IDENT, 0)
-
-        def call_params(self):
-            return self.getTypedRuleContext(ExprParser.Call_paramsContext,0)
-
-
-        def getRuleIndex(self):
-            return ExprParser.RULE_fun_call
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFun_call" ):
-                return visitor.visitFun_call(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-
-
-    def fun_call(self):
-
-        localctx = ExprParser.Fun_callContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 10, self.RULE_fun_call)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 81
-            self.match(ExprParser.FUN_IDENT)
             self.state = 82
-            self.call_params()
+            self.match(ExprParser.T__3)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
