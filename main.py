@@ -15,6 +15,9 @@ class TreeVisitor(ExprVisitor):
     def visitFun_declaration(self, ctx: ExprParser.Fun_declarationContext):
         l = list(ctx.getChildren())
         fun_name = l[0].getText()
+        if functions.get(fun_name is not None):
+            print("function already exists")
+            return None
         fun_params = self.visit(l[1])
         fun_block = l[2]
         return {"name": fun_name, "params": fun_params, "block": fun_block}
@@ -70,6 +73,9 @@ class TreeVisitor(ExprVisitor):
         if function != None:
             param_keys = function["params"]
             param_values = self.visit(l[1])
+            if len(param_keys) != len(param_values):
+                print("number of arguments doesn't match function signature")
+                # TODO: raiseException
             call_stack.append(dict(zip(param_keys, param_values)))
             fun_val = self.visit(function["block"])
             call_stack.pop()
@@ -96,7 +102,7 @@ class TreeVisitor(ExprVisitor):
     # Visit a parse tree produced by ExprParser#if_expr.
     def visitIf_expr(self, ctx: ExprParser.If_exprContext):
         l = list(ctx.getChildren())
-        for i in range(1,len(l)):
+        for i in range(1, len(l)):
             if (
                 l[i].getText() != "if" and l[i].getText() != "else"
             ):  # we can have else if else if... else
@@ -120,7 +126,8 @@ class TreeVisitor(ExprVisitor):
             res = self.visit(l[1])
             if it == 10000:
                 print("you are prob stuck in this while...")
-                break
+                # TODO: raiseException
+                return None
             it += 1
         return None
 
@@ -181,16 +188,20 @@ while True:
     parser = ExprParser(token_stream)
     tree = parser.root()
     visitor = TreeVisitor()
-    ans = visitor.visit(tree)
-    if isinstance(ans, int):
-        print(ans)
-    else:
-        if ans is None:
-            print(None)
-        elif functions.get(ans["name"]) is None:
-            functions[ans["name"]] = {
-                "params": ans["params"],
-                "block": ans["block"],
-            }
+    try:
+        ans = visitor.visit(tree)
+        if isinstance(ans, int):
+            print(ans)
         else:
-            print("hey bro, this function already exists")
+            if ans is None:
+                print(None)
+            elif functions.get(ans["name"]) is None:
+                functions[ans["name"]] = {
+                    "params": ans["params"],
+                    "block": ans["block"],
+                }
+    except (
+        ZeroDivisionError,
+        MismatchNumArguments,
+    ):  # TODO: handle exceptions: x/0, num args, unknow/already exist function, while...
+        print(e)
