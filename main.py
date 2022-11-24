@@ -119,7 +119,7 @@ class TreeVisitor(ExprVisitor):
     def visitShow(self, ctx: ExprParser.ShowContext):
         l = list(ctx.getChildren())
         if (l[1].getText())[0] != '"':
-            print("> ", call_stack[-1].get(l[1].getText(), 0))
+            print("> ", self.visit(l[1]))
         else:
             print("> ", l[1].getText()[1:-1])
         return None

@@ -19,7 +19,7 @@ block: '{' (logical_expr | show)* expr? '}';
 
 fun_call: FUN_IDENT call_params;
 
-show: SHOW (IDENT | StringLiteral);
+show: SHOW (expr | StringLiteral);
 
 logical_expr: if_expr | while_expr | assignment;
 
