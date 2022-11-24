@@ -5,6 +5,22 @@ from ExprParser import ExprParser
 from ExprVisitor import ExprVisitor
 
 
+class ArgumentNumberMismatch(Exception):
+    pass
+
+
+class UnknowFunctionCallException(Exception):
+    pass
+
+
+class FuncionReDeclarationException(Exception):
+    pass
+
+
+class TooManyIterationsException(Exception):
+    pass
+
+
 class TreeVisitor(ExprVisitor):
 
     # Visit a parse tree produced by ExprParser#root.
@@ -15,9 +31,8 @@ class TreeVisitor(ExprVisitor):
     def visitFun_declaration(self, ctx: ExprParser.Fun_declarationContext):
         l = list(ctx.getChildren())
         fun_name = l[0].getText()
-        if functions.get(fun_name is not None):
-            print("function already exists")
-            return None
+        if functions.get(fun_name) is not None:
+            raise FuncionReDeclarationException
         fun_params = self.visit(l[1])
         fun_block = l[2]
         return {"name": fun_name, "params": fun_params, "block": fun_block}
@@ -74,16 +89,13 @@ class TreeVisitor(ExprVisitor):
             param_keys = function["params"]
             param_values = self.visit(l[1])
             if len(param_keys) != len(param_values):
-                print("number of arguments doesn't match function signature")
-                # TODO: raiseException
+                raise ArgumentNumberMismatch
             call_stack.append(dict(zip(param_keys, param_values)))
             fun_val = self.visit(function["block"])
             call_stack.pop()
             return fun_val
         else:
-            print("hei the function", fun_name, "doesn't exist")
-            # TODO: raiseException
-            return 0
+            raise UnknowFunctionCallException
 
     # Visit a parse tree produced by ExprParser#declare_params.
     def visitDeclare_params(self, ctx: ExprParser.Declare_paramsContext):
@@ -109,7 +121,7 @@ class TreeVisitor(ExprVisitor):
                 ret = self.visit(
                     l[i]
                 )  # condition_block unless we reach last else, block
-                if ret != False:
+                if ret is not False:
                     if ret is not None:
                         return ret
                     break
@@ -120,14 +132,12 @@ class TreeVisitor(ExprVisitor):
         l = list(ctx.getChildren())
         res = self.visit(l[1])
         it = 0
-        while res != False:
+        while res is not False:
             if res is not None:
                 return res
             res = self.visit(l[1])
             if it == 10000:
-                print("you are prob stuck in this while...")
-                # TODO: raiseException
-                return None
+                raise TooManyIterationsException
             it += 1
         return None
 
@@ -200,8 +210,13 @@ while True:
                     "params": ans["params"],
                     "block": ans["block"],
                 }
-    except (
-        ZeroDivisionError,
-        MismatchNumArguments,
-    ):  # TODO: handle exceptions: x/0, num args, unknow/already exist function, while...
-        print(e)
+    except ZeroDivisionError:
+        print("Zero division attempt")
+    except TooManyIterationsException:
+        print("Probably stuck in while loop")
+    except FuncionReDeclarationException:
+        print("This function name is already used")
+    except UnknowFunctionCallException:
+        print("You are calling an undefined function")
+    except ArgumentNumberMismatch:
+        print("The number of arguments doesn't match the function signature")
