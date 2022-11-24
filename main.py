@@ -53,9 +53,9 @@ class TreeVisitor(ExprVisitor):
         l = list(ctx.getChildren())
         if len(l) == 1:
             if isinstance(l[0], antlr4.tree.Tree.TerminalNode):
-                if re.match("[+-]?\d+$", l[0].getText()):
+                if l[0].getText().isdigit():
                     return int(l[0].getText())  # NUMBER
-                return 0  # call_stack[-1].get(l[0].getText(), 0)  # IDENT or 0
+                return call_stack[-1].get(l[0].getText(), 0)  # IDENT or 0
             return self.visit(l[0])  # fun_call
         if len(l) == 2:  # negative num
             return -int(l[1].getText())
@@ -175,15 +175,9 @@ class TreeVisitor(ExprVisitor):
     # Visit a parse tree produced by ExprParser#condition.
     def visitCondition(self, ctx: ExprParser.ConditionContext):
         l = list(ctx.getChildren())
-        if len(l) == 1:
-            if isinstance(l[0], antlr4.tree.Tree.TerminalNode):
-                if l[0].getText().isdigit():
-                    return int(l[0].getText())  # NUMBER
-                return call_stack[-1].get(l[0].getText(), 0)
-            return self.visit(l[0])  # Then this is a function call
 
-        if len(l) == 2:
-            return -int(l[1].getText())
+        if len(l) == 1:  # expr
+            return self.visit(l[0])
 
         if l[0].getText() == "(":
             return self.visit(l[1])

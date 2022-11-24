@@ -49,8 +49,7 @@ condition:
 	| condition EQ condition
 	| condition NE condition
 	| '(' condition ')'
-	| (MENYS | MES)? NUMBER
-	| IDENT;
+	| expr;
 
 // comment
 LINE_COMMENT: '#' ~[\r\n]* -> skip;
