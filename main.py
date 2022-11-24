@@ -3,6 +3,7 @@ import antlr4
 from ExprLexer import ExprLexer
 from ExprParser import ExprParser
 from ExprVisitor import ExprVisitor
+from antlr4.error.ErrorListener import ErrorListener, ConsoleErrorListener
 
 
 class ArgumentNumberMismatch(Exception):
@@ -19,6 +20,15 @@ class FuncionReDeclarationException(Exception):
 
 class TooManyIterationsException(Exception):
     pass
+
+
+class LexerException(Exception):
+    pass
+
+
+class ErrorThrower(ErrorListener):
+    def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
+        raise LexerException()
 
 
 class TreeVisitor(ExprVisitor):
@@ -68,13 +78,13 @@ class TreeVisitor(ExprVisitor):
     # Visit a parse tree produced by ExprParser#block.
     def visitBlock(self, ctx: ExprParser.BlockContext):
         l = list(ctx.getChildren())
-        for i in range(1, len(l) - 2):  # handle logical_expr
+        for i in range(1, len(l) - 2):  # handle logical_expr | peek
             res = self.visit(l[i])
             if res is not None:
                 return res
         if isinstance(l[-2], ExprParser.ExprContext):  # it's an expr
             return self.visit(l[-2])
-        else:  # it's a logical_expr
+        else:  # it's a logical_expr | peek
             res = self.visit(l[-2])
             if res is not None:
                 return res
@@ -105,6 +115,14 @@ class TreeVisitor(ExprVisitor):
     # Visit a parse tree produced by ExprParser#logical_expr.
     def visitLogical_expr(self, ctx: ExprParser.Logical_exprContext):
         return self.visitChildren(ctx)  # if_expr, while_expr or assignment
+
+    def visitPeek(self, ctx: ExprParser.PeekContext):
+        l = list(ctx.getChildren())
+        if (l[1].getText())[0] != '"':
+            print("> ", call_stack[-1].get(l[1].getText(), 0))
+        else:
+            print("> ", l[1].getText()[1:-1])
+        return None
 
     # Visit a parse tree produced by ExprParser#call_params.
     def visitCall_params(self, ctx: ExprParser.Call_paramsContext):
@@ -186,19 +204,20 @@ functions = {}
 call_stack = []
 
 while True:
-    input_stream = InputStream(
-        (input("? "))
-        # "# funció que rep dos enters i en torna el seu maxim comu divisor \n Euclides a b{  while a != b  {    if a > b    {      a <- a - b    }    else    {      b <- b - a    } }  a}Euclides 6 8"
-        # "DOS { 2 } Suma2 x { DOS + x } Suma2 3"
-        # "Fibo n{    if n < 2 { n }   (Fibo n-1) + (Fibo n-2)}Fibo 4"
-    )
-    lexer = ExprLexer(input_stream)
-    lexer = ExprLexer(input_stream)
-    token_stream = CommonTokenStream(lexer)
-    parser = ExprParser(token_stream)
-    tree = parser.root()
-    visitor = TreeVisitor()
     try:
+        input_stream = InputStream(
+            (input("? "))
+            # "# funció que rep dos enters i en torna el seu maxim comu divisor \n Euclides a b{  while a != b  {    if a > b    {      a <- a - b    }    else    {      b <- b - a    } }  a}Euclides 6 8"
+            # "DOS { 2 } Suma2 x { DOS + x } Suma2 3"
+            # "Fibo n{    if n < 2 { n }   (Fibo n-1) + (Fibo n-2)}Fibo 4"
+        )
+        lexer = ExprLexer(input_stream)
+        lexer = ExprLexer(input_stream)
+        lexer.addErrorListener(ErrorThrower())
+        token_stream = CommonTokenStream(lexer)
+        parser = ExprParser(token_stream)
+        tree = parser.root()
+        visitor = TreeVisitor()
         ans = visitor.visit(tree)
         if isinstance(ans, int):
             print(ans)
@@ -220,3 +239,5 @@ while True:
         print("You are calling an undefined function")
     except ArgumentNumberMismatch:
         print("The number of arguments doesn't match the function signature")
+    except LexerException:
+        print("Lexer failed")

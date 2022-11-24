@@ -13,15 +13,21 @@ expr:
 	| NUMBER
 	| IDENT;
 
-fun_call: FUN_IDENT call_params;
-
 declare_params: (IDENT)*;
 
-block: '{' (logical_expr)* expr? '}';
+block: '{' (logical_expr | peek)* expr? '}';
+
+fun_call: FUN_IDENT call_params;
+
+peek: PEEK (IDENT | StringLiteral);
 
 logical_expr: if_expr | while_expr | assignment;
 
 call_params: (expr)*;
+
+StringLiteral: UnterminatedStringLiteral '"';
+
+UnterminatedStringLiteral: '"' (~["\\\r\n] | '\\' (. | EOF))*;
 
 if_expr:
 	IF condition_block (ELSE IF condition_block)* (ELSE block)?;
@@ -60,6 +66,9 @@ MENYS: '-';
 // assignment
 ASSIGN: '<-';
 
+// peek
+PEEK: 'peek';
+
 // logical_expr
 IF: 'if';
 ELSE: 'else';
@@ -89,5 +98,4 @@ MINUS: [a-z];
 DIGIT: [0-9];
 
 // helpers
-EOL: '\n';
 WS: [ \n]+ -> skip;
