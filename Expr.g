@@ -10,16 +10,16 @@ expr:
 	| expr (MES | MENYS) expr
 	| '(' expr ')'
 	| fun_call
-	| NUMBER
+	| (MENYS | MES)? NUMBER
 	| IDENT;
 
 declare_params: (IDENT)*;
 
-block: '{' (logical_expr | peek)* expr? '}';
+block: '{' (logical_expr | show)* expr? '}';
 
 fun_call: FUN_IDENT call_params;
 
-peek: PEEK (IDENT | StringLiteral);
+show: SHOW (IDENT | StringLiteral);
 
 logical_expr: if_expr | while_expr | assignment;
 
@@ -49,7 +49,7 @@ condition:
 	| condition EQ condition
 	| condition NE condition
 	| '(' condition ')'
-	| NUMBER
+	| (MENYS | MES)? NUMBER
 	| IDENT;
 
 // comment
@@ -66,8 +66,8 @@ MENYS: '-';
 // assignment
 ASSIGN: '<-';
 
-// peek
-PEEK: 'peek';
+// show
+SHOW: 'show';
 
 // logical_expr
 IF: 'if';
@@ -91,7 +91,7 @@ IDENT: MINUS (LETTER | DIGIT)*;
 FUN_IDENT: MAJUS (LETTER | DIGIT)*;
 COMMENT_START: '#';
 
-// fragments
+// atoms
 LETTER: (MINUS | MAJUS);
 MAJUS: [A-Z];
 MINUS: [a-z];

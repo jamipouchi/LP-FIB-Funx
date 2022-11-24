@@ -1,3 +1,4 @@
+import re
 from antlr4 import *
 import antlr4
 from ExprLexer import ExprLexer
@@ -49,16 +50,15 @@ class TreeVisitor(ExprVisitor):
 
     # Visit a parse tree produced by ExprParser#expr.
     def visitExpr(self, ctx: ExprParser.ExprContext):
-        from ExprParser import ExprParser
-
         l = list(ctx.getChildren())
-
         if len(l) == 1:
             if isinstance(l[0], antlr4.tree.Tree.TerminalNode):
-                if l[0].getText().isdigit():
+                if re.match("[+-]?\d+$", l[0].getText()):
                     return int(l[0].getText())  # NUMBER
-                return call_stack[-1].get(l[0].getText(), 0)  # IDENT or 0
+                return 0  # call_stack[-1].get(l[0].getText(), 0)  # IDENT or 0
             return self.visit(l[0])  # fun_call
+        if len(l) == 2:  # negative num
+            return -int(l[1].getText())
 
         if l[0].getText() == "(":
             return self.visit(l[1])  # expression
@@ -78,13 +78,13 @@ class TreeVisitor(ExprVisitor):
     # Visit a parse tree produced by ExprParser#block.
     def visitBlock(self, ctx: ExprParser.BlockContext):
         l = list(ctx.getChildren())
-        for i in range(1, len(l) - 2):  # handle logical_expr | peek
+        for i in range(1, len(l) - 2):  # handle logical_expr | show
             res = self.visit(l[i])
             if res is not None:
                 return res
         if isinstance(l[-2], ExprParser.ExprContext):  # it's an expr
             return self.visit(l[-2])
-        else:  # it's a logical_expr | peek
+        else:  # it's a logical_expr | show
             res = self.visit(l[-2])
             if res is not None:
                 return res
@@ -116,7 +116,7 @@ class TreeVisitor(ExprVisitor):
     def visitLogical_expr(self, ctx: ExprParser.Logical_exprContext):
         return self.visitChildren(ctx)  # if_expr, while_expr or assignment
 
-    def visitPeek(self, ctx: ExprParser.PeekContext):
+    def visitShow(self, ctx: ExprParser.ShowContext):
         l = list(ctx.getChildren())
         if (l[1].getText())[0] != '"':
             print("> ", call_stack[-1].get(l[1].getText(), 0))
@@ -181,6 +181,9 @@ class TreeVisitor(ExprVisitor):
                     return int(l[0].getText())  # NUMBER
                 return call_stack[-1].get(l[0].getText(), 0)
             return self.visit(l[0])  # Then this is a function call
+
+        if len(l) == 2:
+            return -int(l[1].getText())
 
         if l[0].getText() == "(":
             return self.visit(l[1])

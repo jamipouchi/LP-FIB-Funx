@@ -61,8 +61,8 @@ def serializedATN():
         buf.write("hf\3\2\2\2ij\b\b\2\2j\20\3\2\2\2kl\7`\2\2l\22\3\2\2\2")
         buf.write("mn\7,\2\2n\24\3\2\2\2op\7\61\2\2p\26\3\2\2\2qr\7\'\2\2")
         buf.write("r\30\3\2\2\2st\7-\2\2t\32\3\2\2\2uv\7/\2\2v\34\3\2\2\2")
-        buf.write("wx\7>\2\2xy\7/\2\2y\36\3\2\2\2z{\7r\2\2{|\7g\2\2|}\7g")
-        buf.write("\2\2}~\7m\2\2~ \3\2\2\2\177\u0080\7k\2\2\u0080\u0081\7")
+        buf.write("wx\7>\2\2xy\7/\2\2y\36\3\2\2\2z{\7u\2\2{|\7j\2\2|}\7q")
+        buf.write("\2\2}~\7y\2\2~ \3\2\2\2\177\u0080\7k\2\2\u0080\u0081\7")
         buf.write("h\2\2\u0081\"\3\2\2\2\u0082\u0083\7g\2\2\u0083\u0084\7")
         buf.write("n\2\2\u0084\u0085\7u\2\2\u0085\u0086\7g\2\2\u0086$\3\2")
         buf.write("\2\2\u0087\u0088\7y\2\2\u0088\u0089\7j\2\2\u0089\u008a")
@@ -116,7 +116,7 @@ class ExprLexer(Lexer):
     MES = 12
     MENYS = 13
     ASSIGN = 14
-    PEEK = 15
+    SHOW = 15
     IF = 16
     ELSE = 17
     WHILE = 18
@@ -145,20 +145,20 @@ class ExprLexer(Lexer):
 
     literalNames = [ "<INVALID>",
             "'('", "')'", "'{'", "'}'", "'^'", "'*'", "'/'", "'%'", "'+'", 
-            "'-'", "'<-'", "'peek'", "'if'", "'else'", "'while'", "'and'", 
+            "'-'", "'<-'", "'show'", "'if'", "'else'", "'while'", "'and'", 
             "'or'", "'xor'", "'>'", "'>='", "'<'", "'<='", "'='", "'!='", 
             "'#'" ]
 
     symbolicNames = [ "<INVALID>",
             "StringLiteral", "UnterminatedStringLiteral", "LINE_COMMENT", 
-            "A_LA", "PER", "ENTRE", "MOD", "MES", "MENYS", "ASSIGN", "PEEK", 
+            "A_LA", "PER", "ENTRE", "MOD", "MES", "MENYS", "ASSIGN", "SHOW", 
             "IF", "ELSE", "WHILE", "AND", "OR", "XOR", "GT", "GE", "LT", 
             "LE", "EQ", "NE", "NUMBER", "IDENT", "FUN_IDENT", "COMMENT_START", 
             "LETTER", "MAJUS", "MINUS", "DIGIT", "WS" ]
 
     ruleNames = [ "T__0", "T__1", "T__2", "T__3", "StringLiteral", "UnterminatedStringLiteral", 
                   "LINE_COMMENT", "A_LA", "PER", "ENTRE", "MOD", "MES", 
-                  "MENYS", "ASSIGN", "PEEK", "IF", "ELSE", "WHILE", "AND", 
+                  "MENYS", "ASSIGN", "SHOW", "IF", "ELSE", "WHILE", "AND", 
                   "OR", "XOR", "GT", "GE", "LT", "LE", "EQ", "NE", "NUMBER", 
                   "IDENT", "FUN_IDENT", "COMMENT_START", "LETTER", "MAJUS", 
                   "MINUS", "DIGIT", "WS" ]
