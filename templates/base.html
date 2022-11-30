@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Funx</title>
+    <style id="compiled-css" type="text/css">
+        #left {
+            display: flex;
+            flex-direction: column;
+            padding: 2%;
+            align-items: center;
+        }
+
+        #right {
+            display: flex;
+            flex-direction: column;
+            padding: 2%;
+            align-items: flex-start;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            border-width: 1px;
+        }
+
+        textarea {
+            border-radius: 10px;
+        }
+
+        input {
+            border-width: 1px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="left" style="float: left; width: 40%">
+        <form action="/new-entry" method="POST">
+            <textarea id="input-box" name="input-box" rows="10"
+                cols="50">Submit a new expression or function definition</textarea>
+            <input type="submit" value="Submit" />
+        </form>
+        <br />
+        <h1>Funcions</h1>
+        {% for name, value in functions.items() %}
+        <p> {{name}}
+            {% for param in value.params%}
+            {{param}}
+            {%endfor%}
+        </p>
+        {% endfor %}
+    </div>
+    <div id="right" style="float: right; width: 40%">
+        <h1 style="align-self: center">Resultats</h1>
+        <ul id="entries">
+            {% for entry in entries %}
+            <li><b>In {{entry.idx}}: </b>{{ entry.val.query }}</li>
+            <li><b>Out {{entry.idx}}: </b>{{ entry.val.answer }}</li>
+            {% for msg in entry.val.log %}
+            <li style="list-style-type:none"> > {{msg}} </li>
+            {% endfor %}
+            <br />
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>

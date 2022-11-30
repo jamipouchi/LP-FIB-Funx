@@ -1,4 +1,4 @@
-grammar Expr;
+grammar funx;
 
 root: (fun_declaration)* (expr)?;
 
@@ -97,4 +97,4 @@ MINUS: [a-z];
 DIGIT: [0-9];
 
 // helpers
-WS: [ \n]+ -> skip;
+WS: [ \r\n]+ -> skip;
