@@ -55,7 +55,7 @@ Totes les variables son de tipus enter. Els paràmetres es passen per còpia, i 
 
 En cas de que una funció no surti a través d'una expressió, retorna ``None`` 
 
-## Especifiació de Funx
+## Especificació de Funx
 
 Les instruccions de Funx són:
 
