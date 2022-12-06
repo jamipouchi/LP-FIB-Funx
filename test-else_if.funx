@@ -1,0 +1,25 @@
+# You can string as many 'else if' between 'if' and 'else'
+
+Guess2 x {
+    if (x = 2) {
+        show "You guessed correctly!"
+    }
+    else if (x > 2) {
+        show "You guessed too high"
+    }
+    else {
+        show "You guessed too low"
+    }
+}
+
+# In 2: Guess2 3
+# Out 2: None
+# > You guessed too high
+
+# In 3: Guess2 1
+# Out 3: None
+# > You guessed too low
+
+# In 4: Guess2 2
+# Out 4: None
+# > You guessed correctly!

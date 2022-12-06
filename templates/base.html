@@ -4,18 +4,12 @@
 <head>
     <title>Funx</title>
     <style id="compiled-css" type="text/css">
-        #left {
+        div {
             display: flex;
             flex-direction: column;
             padding: 2%;
             align-items: center;
-        }
-
-        #right {
-            display: flex;
-            flex-direction: column;
-            padding: 2%;
-            align-items: flex-start;
+            width: 40%
         }
 
         form {
@@ -36,7 +30,7 @@
 </head>
 
 <body>
-    <div id="left" style="float: left; width: 40%">
+    <div id="left" style="float: left;">
         <form action="/new-entry" method="POST">
             <textarea id="input-box" name="input-box" rows="10"
                 cols="50">Submit a new expression or function definition</textarea>
@@ -52,7 +46,7 @@
         </p>
         {% endfor %}
     </div>
-    <div id="right" style="float: right; width: 40%">
+    <div id="right" style="float: right; align-items: flex-start;">
         <h1 style="align-self: center">Resultats</h1>
         <ul id="entries">
             {% for entry in entries %}

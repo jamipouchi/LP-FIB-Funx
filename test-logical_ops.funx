@@ -1,0 +1,18 @@
+# You can use 'and', 'or', 'xor' in conditions
+
+Test x y {
+    if (x > 2 and y > 2) {
+        show "both values greater than 2"
+    } 
+    else {
+        show "at least one is not greater than 2"
+    }
+}
+
+# Test 3 3
+# None
+# > both values greater than 2
+
+# Test 2 3
+# None
+# > at least one is not greater than 2

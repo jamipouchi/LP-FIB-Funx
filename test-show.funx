@@ -1,0 +1,11 @@
+# You can show a custom text by placing '"' before and after, or show a variable
+
+ShowX x {
+    show "your input is: "
+    show x
+}
+
+# In 2: ShowX 3
+# Out 2: None
+# > your input is:
+# > 3

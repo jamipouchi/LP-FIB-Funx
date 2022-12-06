@@ -24,10 +24,6 @@ class TooManyIterationsException(Exception):
     pass
 
 
-class VariableException(Exception):
-    pass
-
-
 class LexerException(Exception):
     pass
 
@@ -74,7 +70,7 @@ class TreeVisitor(ParseTreeVisitor):
                     return int(l[0].getText())  # NUMBER
                 if len(call_stack) > 0:
                     return call_stack[-1].get(l[0].getText(), 0)  # IDENT or 0
-                raise VariableException(l[0].getText())  # We are not inside a function
+                return 0
             return self.visit(l[0])  # fun_call
         if len(l) == 2:  # negative num
             return -int(l[1].getText())
@@ -91,6 +87,8 @@ class TreeVisitor(ParseTreeVisitor):
                 return self.visit(l[0]) * self.visit(l[2])
             case funxParser.ENTRE:
                 return self.visit(l[0]) // self.visit(l[2])
+            case funxParser.MOD:
+                return self.visit(l[0]) % self.visit(l[2])
             case funxParser.A_LA:
                 return pow(self.visit(l[0]), self.visit(l[2]))
 
@@ -175,7 +173,7 @@ class TreeVisitor(ParseTreeVisitor):
             if res is not None:
                 return res
             res = self.visit(l[1])
-            if it == 1000:
+            if it == 10000:
                 raise TooManyIterationsException
             it += 1
         return None
@@ -216,6 +214,12 @@ class TreeVisitor(ParseTreeVisitor):
                 return self.visit(l[0]) == self.visit(l[2])
             case funxParser.NE:
                 return self.visit(l[0]) != self.visit(l[2])
+            case funxParser.AND:
+                return self.visit(l[0]) and self.visit(l[2])
+            case funxParser.OR:
+                return self.visit(l[0]) or self.visit(l[2])
+            case funxParser.XOR:
+                return self.visit(l[0]) != self.visit(l[2])
 
 
 functions = {}
@@ -252,8 +256,6 @@ def process_query(query):
         return "The number of arguments doesn't match the function signature: " + str(
             msg
         )
-    except VariableException as var:
-        return "You can't use a variable as an expression: " + str(var)
     except LexerException:
         return "Lexer failed"
 

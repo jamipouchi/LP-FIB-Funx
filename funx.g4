@@ -39,15 +39,15 @@ assignment: IDENT ASSIGN expr;
 condition_block: condition block;
 
 condition:
-	condition AND condition
-	| condition OR condition
-	| condition XOR condition
-	| condition GT condition
+	condition GT condition
 	| condition GE condition
 	| condition LT condition
 	| condition LE condition
 	| condition EQ condition
 	| condition NE condition
+	| condition AND condition
+	| condition OR condition
+	| condition XOR condition
 	| '(' condition ')'
 	| expr;
 

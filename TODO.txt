@@ -1,2 +1,0 @@
--> test-*.funx (tests per les funcionalitats afegides (show mainly)
--> README
