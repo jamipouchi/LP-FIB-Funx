@@ -88,7 +88,7 @@ Out #: None
 > x modified:
 > 5
 ```
-Els operadors son els habituals, més la potència: (`` +``, ``-``, ``*``, ``/``, ``%``, ``^``) i tenen la mateixa prioritat que els de C.
+Els operadors son els habituals, més la potència: (``+``, ``-``, ``*``, ``/``, ``%``, ``^``) i tenen la mateixa prioritat que els de C.
 
 ## Condicions
 
